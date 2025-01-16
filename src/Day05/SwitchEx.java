@@ -18,5 +18,6 @@ public class SwitchEx {
             default:
                 System.out.println("잘못된 등급");
         }
+
     }
 }

@@ -23,5 +23,7 @@ public class Calculator {
 
 //        4. 결과 출력
         System.out.println("결과값 = "+ sum);
+
+        sc.close();
     }
 }

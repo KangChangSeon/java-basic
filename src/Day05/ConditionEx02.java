@@ -20,6 +20,7 @@ public class ConditionEx02 {
         else{
             System.out.println("숫자가 존재하지 않습니다.");
         }
+        input.close();
 
     }
 }

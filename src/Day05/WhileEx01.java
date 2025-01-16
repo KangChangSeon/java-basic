@@ -29,5 +29,6 @@ public class WhileEx01 {
             System.out.println("Hello World");
              i++;
         } while(i<6);
+        in.close();
     }
 }
