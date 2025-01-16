@@ -1,0 +1,1491 @@
+- 반복제어문 1 -
+
+연습문제 1
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char c = 65;
+        for (int i = 0; i < 26; i++) {
+            System.out.print(c);
+            c++;
+        }
+    }
+}
+자가진단 1
+import javax.management.openmbean.CompositeType;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int a = 1;
+        while(a<=15){
+            System.out.print(a +" ");
+            a++;
+        }
+
+    }
+}
+
+연습문제 2
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = 1;
+        int sum = 0;
+        while(true){
+            sum += num;
+            num++;
+            if(num>10){
+                break;
+            }
+        }
+        System.out.println("1부터 10까지의 합 = "+sum);
+        System.out.println("while문이 끝난 후의 num의 값 = "+num);
+    }
+}
+
+자가진단 2
+import javax.management.openmbean.CompositeType;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = scan.nextInt();
+        int sum = 0;
+        while(num != 0){
+            sum+=num;
+            num--;
+        }
+        System.out.println(sum);
+
+    }
+}
+
+연습문제 3
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int score = 0;
+        while(true){
+            System.out.print("점수를 입력하세요. ");
+            score = scanner.nextInt();
+            if(score < 0 || score > 100){
+                break;
+            }else if(score>=80){
+                System.out.println("축하합니다. 합격입니다.");
+            } else if(score<80){
+                System.out.println("죄송합니다. 불합격입니다.");
+            }
+
+
+        }
+    }
+}
+
+자가진단 3
+import javax.management.openmbean.CompositeType;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a=1;
+        while(a != 0){
+            System.out.print("number? ");
+            a = scan.nextInt();
+            if(a > 0){
+                System.out.println("positive integer");
+            } else if(a < 0){
+                System.out.println("negative number");
+            }
+
+        }
+
+    }
+}
+
+연습문제 4
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        double avg = 0;
+        int count = 0;
+        while(true){
+            int num = scanner.nextInt();
+            sum += num;
+
+            if(num==0){
+                avg = (double)sum/ count;
+                System.out.println("입력된 자료의 개수 = " + count);
+                System.out.println("입력된 자료의 합계 = " + sum);
+                System.out.printf("입력된 자료의 평균 = %.2f",avg);
+                break;
+            }
+            count++;
+        }
+
+    }
+}
+
+자가진단 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a = 1;
+        int sum = 0;
+        double avg = 0.0;
+        int tmp = 1;
+
+        while (a < 100) {
+            a = scan.nextInt();
+            sum += a;
+            avg = (double) sum / tmp;
+            tmp++;
+        }
+
+        System.out.printf("%d\n%.1f", sum, avg);
+    }
+}
+
+연습문제 5
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        double avg = 0;
+        int count = 0;
+        while (true) {
+            int num = scanner.nextInt();
+            if (num == 0) {
+                break;
+            }else if(num%2!=0){
+                count++;
+                sum += num;
+                avg = sum / count;
+            }
+        }
+        System.out.println("홀수의 합 = "+sum);
+        System.out.printf("홀수의 평균 = %d",(int)avg);
+    }
+}
+
+자가진단 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a=0;
+        while(a != -1){
+            a = scan.nextInt();
+            if (a%3==0){
+                System.out.println(a/3);
+            }
+        }
+    }
+}
+
+연습문제 6
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = 0;
+        while (num!=4) {
+            System.out.println("1. 입력하기\n" +
+                    "2. 출력하기\n" +
+                    "3. 삭제하기\n" +
+                    "4. 끝내기\n" +
+                    "작업할 번호를 선택하세요. ");
+            num = scanner.nextInt();
+            switch (num) {
+                case 1:
+                    System.out.println("입력하기를 선택하였습니다.");
+                    continue;
+                case 2:
+                    System.out.println("출력하기를 선택하였습니다.");
+                    continue;
+                case 3:
+                    System.out.println("삭제하기를 선택하였습니다.");
+                    continue;
+                case 4:
+                    System.out.println("끝내기를 선택하였습니다.");
+                    break;
+                default:
+                    System.out.println("잘못 입력하였습니다.");
+            }
+        }
+    }
+}
+
+자가진단 6
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 1;
+        while (num <= 4 && num >= 1) {
+            System.out.println("1. Korea\n" +
+                    "2. USA\n" +
+                    "3. Japan\n" +
+                    "4. China");
+            System.out.print("number? ");
+            num = scan.nextInt();
+            switch (num) {
+                case 1:
+                    System.out.println("\nSeoul\n");
+                    break;
+                case 2:
+                    System.out.println("\nWashington\n");
+                    break;
+                case 3:
+                    System.out.println("\nTokyo\n");
+                    break;
+                case 4:
+                    System.out.println("\nBeijing\n");
+                    break;
+                default:
+                    System.out.println("\nnone\n");
+            }
+
+        }
+    }
+}
+
+형성평가 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+
+        for (int i = 1; i <= a; i++){
+            System.out.print(i + " ");
+        }
+
+    }
+}
+
+형성평가 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 0;
+        int odd = 0;
+        int even = 0;
+
+        while(true){
+            num = scan.nextInt();
+            if(num <= 0){
+                break;
+            }
+            if(num % 2 == 0){
+                even++;
+            }else{
+                odd++;
+            }
+        }
+        System.out.printf("odd : %d\neven : %d", odd, even);
+    }
+}
+
+형성평가 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 0;
+        int sum = 0;
+        double avg = 0;
+        int i = 1;
+
+        while(true){
+            num = scan.nextInt();
+            if(num < 0 || num > 100){
+                break;
+            }
+            else {
+                sum += num;
+                avg = (double) sum / i++;
+            }
+        }
+        System.out.printf("sum : %d\navg : %.1f", sum, avg);
+
+    }
+}
+
+형성평가 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int num = 0;
+        int i = 0;
+
+        while(true){
+            num = scan.nextInt();
+            if(num == 0){
+                break;
+            }
+            if(num%3!=0 && num%5!=0){
+                i++;
+            }
+
+        }
+        System.out.println(i);
+
+    }
+}
+
+형성평가 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int Base = 0;
+        int Height = 0;
+        String go = "";
+
+        while (true) {
+            Base = scan.nextInt();
+            Height = scan.nextInt();
+            double TW = (double)Base * Height / 2;
+            System.out.printf("Base = Height = Triangle width = %.1f\n", TW);
+            System.out.print("Continue? ");
+            go = scan.next();
+            if (!go.equalsIgnoreCase("Y") || !go.equalsIgnoreCase("y")) {
+                break;
+            }
+
+        }
+
+    }
+}
+
+
+- 반복제어문 2 -
+
+연습문제 1
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for (int i = 0; i < n; i++){
+            System.out.println("C언어 프로그래밍");
+        }
+
+    }
+}
+
+자가진단 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char ch = scanner.next().charAt(0);
+        for(int i=0; i<20; i++)
+            System.out.print(ch);
+    }
+}
+
+연습문제 2
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char c = 65;
+
+        for(int i = 0 ; i < 26 ; i++){
+            System.out.print(c);
+            c++;
+        }
+
+
+    }
+}
+
+자가진단 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = 0;
+        for(int i=10; i<21; i++)
+            System.out.print(i+" ");
+    }
+}
+
+연습문제 3
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        for(int i = 0 ; i < 20 ; i++){
+            if(i % 2 != 0){
+                System.out.print(i + " ");
+            }
+        }
+
+
+    }
+}
+
+자가진단 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+
+        for (int i = 1; i <= num; i++){
+            if(i % 2 == 0){
+                System.out.print(i+" ");
+            }
+        }
+    }
+}
+
+연습문제 4
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int sum = 0;
+
+        for(int i = 1 ; i <= n ; i++){
+            sum += i;
+        }
+        System.out.println(sum);
+
+
+    }
+}
+
+자가진단 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        int sum = 0;
+
+        for (int i = num; i <= 100; i++){
+            sum += i;
+        }
+        System.out.println(sum);
+    }
+}
+
+연습문제 5
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+
+        for(int i = 0 ; i < 10 ; i++){
+            int n = scanner.nextInt();
+            if (n % 2 == 0) count++;
+        }
+        System.out.printf("입력받은 짝수는 %d개입니다.",count);
+
+
+    }
+}
+
+자가진단 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int Muti3=0;
+        int Muti5=0;
+        for (int i = 0; i < 10; i++) {
+            int num = scanner.nextInt();
+            if(num%3==0 && num%5==0){
+                Muti3++;
+                Muti5++;
+            }else if(num%5==0){
+                Muti5++;
+            }else if (num%3==0){
+                Muti3++;
+            }
+        }
+        System.out.printf("Multiples of 3 : %d\nMultiples of 5 : %d\n", Muti3, Muti5);
+
+
+    }
+}
+
+연습문제 6
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        double avg = 0;
+        int count = 0;
+
+        for (int i =0; i<5; i++){
+            int n = scanner.nextInt();
+            sum += n;
+            count++;
+        }
+        avg = (double)sum / count;
+        System.out.println("총점 : "+sum);
+        System.out.printf("평균 : %.1f",avg);
+    }
+}
+
+자가진단 6
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int sum = 0;
+        double avg = 0.0;
+
+        for(int i = 0; i < n; i++){
+            int num = scanner.nextInt();
+            sum += num;
+            avg = (double)sum / (double)n;
+        }
+        System.out.printf("avg : %.1f\n",avg);
+        if(avg >= 80.0) {
+            System.out.println("pass");}
+        else {
+            System.out.println("fail");
+        };
+
+    }
+}
+
+연습문제 7
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        for(int i = 1 ; i <= 5 ; i++){
+            for(int j = 0 ; j < 5 ; j++){
+                System.out.print(i+" ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for(int i = 1 ; i <= 5 ; i++){
+            for(int j = 1 ; j <= 5 ; j++){
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+자가진단 7
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int num = 2;
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                System.out.print(num + j + " ");
+            }
+            num++;
+            System.out.println();
+        }
+    }
+}
+
+연습문제 8
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        for(int i = 1 ; i <= 9 ; i++){
+            for(int j = 2 ; j <= 4 ; j++){
+                System.out.printf("%d * %d = %2d   ",j,i,i*j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+자가진단 8
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        for (int i = 2; i < 5; i++){
+            for (int j = 1; j < 6; j++){
+                System.out.printf("%d * %d = %2d   ", i, j, i*j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for (int i = 0; i < n; i++){
+            System.out.println("JUNGOL");
+        }
+    }
+}
+
+형성평가 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+
+        if(a>b){
+            for (int i = b; i <= a; i++){
+                System.out.print(i+" ");
+            }
+        }else{
+            for (int i = a; i <= b; i++){
+                System.out.print(i+" ");
+            }
+        }
+
+    }
+}
+
+형성평가 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int sum = 0;
+
+        for(int i = 1; i <= a; i++){
+            if(i%5==0){
+                sum += i;
+            }
+        }
+        System.out.println(sum);
+    }
+}
+
+형성평가 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        double avg = 0.0;
+        int sum = 0;
+        for(int i = 0; i < n; i++){
+            int num = scanner.nextInt();
+            sum += num;
+            avg = (double)sum / n;
+        }
+        System.out.printf("%.2f",avg);
+    }
+}
+
+형성평가 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num = 0;
+        int even = 0;
+        int odd = 0;
+        for (int i = 0; i < 10; i++){
+            num = scanner.nextInt();
+            if(num%2==0){
+                even++;
+            }else{
+                odd++;
+            }
+        }
+        System.out.printf("even : %d\nodd : %d",even,odd);
+    }
+}
+
+형성평가 6
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        int sum = 0;
+        double avg = 0;
+        int count = 0;
+
+        if (a < b) {
+            for (int i = a; i <= b; i++) {
+                if (i % 3 == 0 || i % 5 == 0) {
+                    sum += i;
+                    count++;
+                }
+                avg = (double) sum / count;
+            }
+            System.out.printf("sum : %d\navg : %.1f", sum, avg);
+        } else {
+            for (int i = b; i <= a; i++) {
+                if (i % 3 == 0 || i % 5 == 0) {
+                    sum += i;
+                    count++;
+                }
+                avg = (double) sum / count;
+            }
+            System.out.printf("sum : %d\navg : %.1f", sum, avg);
+        }
+    }
+}
+
+형성평가 7
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for(int i = 1; i <= 10; i++){
+            System.out.print(n*i+" ");
+        }
+
+    }
+}
+형성평가 8
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+
+        for (int i = 1; i <= x; i++) {
+            for (int j = 1; j <= y; j++) {
+                System.out.print(i*j+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 9
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= n; j++) {
+                System.out.printf("(%d, %d) ", i, j);
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 10
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+
+
+        if(a<b){
+            for (int i = 1; i <= 9; i++) {
+                for (int j = a; j <= b; j++) {
+                    System.out.printf("%d * %d = %2d   ", j, i, j * i);
+                }
+                System.out.println();
+            }
+        }
+        else{
+            // a = 5, b = 3
+            for (int i = 1; i <= 9; i++) {
+                for (int j = a; j >= b; j--) {
+                    System.out.printf("%d * %d = %2d   ", j, i, j * i);
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+
+- 반복제어문 3 -
+
+연습문제 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int sum = 0;
+        int count = 0;
+
+        for (int i = 1; i <= n; i++) {
+            sum += i;
+            count++;
+            if (sum > n) {
+                System.out.printf("%d %d", count, sum);
+                break;
+            }
+        }
+
+    }
+}
+
+자가진단 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int sum = 0;
+        int count = 0;
+        for (int i = 1; i <= n; i++){
+            if(i%2!=0){
+                sum+=i;
+                count++;
+                if(sum>=n){
+                    System.out.printf("%d %d",count,sum);
+                    break;
+                }
+            }
+        }
+    }
+}
+
+연습문제 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = "*";
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < i+1; j++){
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+자가진단 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = "*";
+        int n = scanner.nextInt();
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < i+1; j++){
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+연습문제 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = "*";
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+        for (int i = 3; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+자가진단 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = "*";
+        int n = scanner.nextInt();
+        for (int i = n; i > 0; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < i + 1; j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+연습문제 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = " ";
+        String star = "*";
+        int n = scanner.nextInt();
+        for (int i = n; i > 0; i--) {
+            for (int j = 0; j < i-1; j++) {
+                System.out.print(c);
+            }
+            for (int j = 0; j <= n - i; j++) {
+                System.out.print(star);
+            }
+            System.out.println();
+        }
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < i + 1; j++) {
+//                System.out.print(c);
+//            }
+//            System.out.println();
+//        }
+
+    }
+}
+
+자가진단 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = " ";
+        String star = "*";
+        int n = scanner.nextInt();
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < i; j++){
+                System.out.print(c);
+            }
+            for(int j = n; j > i; j--){
+                System.out.print(star);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+연습문제 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = " ";
+        String star = "*";
+        int n = 5;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < (i * 2) + 1; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+자가진단 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = " ";
+        String star = "*";
+        int n = scanner.nextInt();
+
+        for(int i = 0; i < n; i++){
+            for (int j = 0; j < i; j++){
+                System.out.print(" ");
+            }
+            for (int j = 0; j < (n*2)-1-(i*2); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
+    }
+}
+
+연습문제 6
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int num = 1;
+        for (int i = 1; i <= n; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(num+" ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+자가진단 6
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        char c = 65;
+        for (int i = 1; i <= n; i++) {
+            for (int j = n; j >= i; j--) {
+                System.out.print(c);
+                c++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+연습문제 7
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        char c = 97;
+        int num = 1;
+        for (int i = 1; i <= 4; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(c+" ");
+                c++;
+            }
+
+            for (int j = 4; j >= i; j--) {
+                System.out.print(num+" ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+자가진단 7
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int num = 1;
+        char c = 65;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = n; i < j; j--) {
+                System.out.print(num + " ");
+                num++;
+            }
+            for (int j = 1; j <= i+1; j++) {
+                System.out.print(c + " ");
+                c++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 1
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        double avg = 0;
+        int n = 1;
+        int count = 0;
+
+        for (int i = 0; i < 20; i++) {
+            n = scanner.nextInt();
+            if(n==0){
+                break;
+            }
+            sum += n;
+            count++;
+            avg = sum / count;
+        }
+        System.out.printf("%d %d", sum, (int) avg);
+
+
+    }
+}
+
+형성평가 2
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int count = 1;
+
+        for (int i = 1; i <= 9; i++) {
+            if (n*i % 10 != 0 && (n*i) < 100) {
+                System.out.print(n * i + " ");
+
+            } else if (n*i % 10 == 0) {
+                System.out.println(n * i + " ");
+                break;
+            } else if(n*i > 100){
+                break;
+            }
+        }
+
+    }
+}
+
+형성평가 3
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        String c = "*";
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+        for(int i = n-1; i > 0; i--){
+            for (int j = i; j > 0; j--) {
+                System.out.print(c);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+형성평가 4
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = " ";
+        String star = "*";
+        int n = scanner.nextInt();
+
+        for(int i = 0; i < n; i++){
+            for (int j = 0; j < i; j++){
+                System.out.print(" ");
+            }
+            for (int j = 0; j < (n*2)-1-(i*2); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for(int i = n-2; i >= 0; i--){
+            for (int j = 0; j < i; j++){
+                System.out.print(" ");
+            }
+            for (int j = 0; j < (n*2)-1-(i*2); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
+    }
+}
+
+형성평가 5
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = "  ";
+        String star = "*";
+        int n = scanner.nextInt();
+
+        for(int i = n-1; i >= 0; i--){
+            for (int j = 0; j < i; j++){
+                System.out.print(c);
+            }
+            for (int j = 0; j < (n*2)-1-(i*2); j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
+    }
+}
+
+형성평가 6
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String c = "  ";
+        int n = scanner.nextInt();
+
+        for (int i = n - 1; i >= 0; i--) {
+            int num = 1;
+            for (int j = 0; j < i; j++) {
+                System.out.print(c);
+            }
+            for (int j = n; j > i; j--) {
+                System.out.print(num + " ");
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 7
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        char c = 65;
+        int count = 0;
+
+        for(int i = 0; i < n; i++){
+            for(int j = n; j>i; j--){
+                System.out.print(c+" ");
+                c++;
+            }
+            for(int j = 1; j<=i; j++){
+                System.out.print(count+" ");
+                count++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 8
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        String spc = "  ";
+        char c = 65;
+        int count = 1;
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < i; j++){
+                System.out.print(spc);
+            }
+            for(int j = n; j > i; j--){
+                System.out.print(count+" ");
+                count++;
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 9
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        String spc = "  ";
+        char c = '#';
+
+        for(int i = 0; i < 2 * n - 1; i++){
+            if(i < n) {
+                for(int j = 0; j < i + 1; j++){
+                    System.out.print(c + " ");
+                }
+            }else {
+                int bottom = i - n + 1;
+
+                for(int j = 0; j < bottom; j++){
+                    System.out.print(spc);
+                }
+
+                for(int j = 0; j < n - bottom; j++){
+                    System.out.print(c + " ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+형성평가 10
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        int num = 1;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (num % 2 == 0) {
+                    num++;
+                }
+                if (num > 10) {
+                    num = 1;
+                }
+                System.out.print(num + " ");
+                num++;
+
+            }
+            System.out.println();
+        }
+    }
+}
+
