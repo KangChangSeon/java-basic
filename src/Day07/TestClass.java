@@ -1,24 +1,30 @@
-package Day07;
+package day07;
 
 import java.util.Scanner;
 
-class Car{
+class Car {
     String color;
-    void colorReturn(){
-        System.out.println("자동차 색은 " + color);
+
+    void colorReturn() {
+        System.out.println("자동차 색은 " + this.color);
     }
 }
 
 public class TestClass {
+
     public static void main(String[] args) {
-        int num = 1;
+       // int number = 1;
+       // Scanner sc = new Scanner(System.in);
         Car car1 = new Car();
         Car car2 = new Car();
 
-        car1.color = "red";
+        //System.out.println(number);
+       // System.out.println(sc.getClass().getName() );
+        car1.color ="read";
         car2.color = "blue";
+        System.out.println(car1.color);
+        System.out.println(car2.color);
 
-        car1.colorReturn();
-        car2.colorReturn();
     }
+
 }

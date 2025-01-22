@@ -14,7 +14,6 @@ public class Main_634 {
             }
             System.out.println();
         }
-        in.close();
 
     }
 }

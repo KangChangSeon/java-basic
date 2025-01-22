@@ -1,29 +1,35 @@
-package Day01;
+package day01;
 
 import java.util.Scanner;
 
 public class Calculator {
+    //1 + 1 =?
     public static void main(String[] args) {
-//        문제. for 문을 이용해서 1 ~ 100까지의 합을 구하는 결과 출력
-
-
-//        1. 데이터 자유 입력
-        Scanner sc = new Scanner(System.in);
-        System.out.println("1부터 x의 합을 구할 때, x의 값을 입력하세요.");
-        int b = sc.nextInt(); // 100 입력
+        //1. 데이터 자유 입력
+        Scanner in = new Scanner(System.in);
+        System.out.println("first number input: ");
+        int a = in.nextInt();    //1
+        System.out.println("end number input: ");
+        int b = in.nextInt();   //100
         int sum = 0;
+        //2. 데이터 처리   //3. 데이터 결과 저장
+        //sum = a + b;
 
-//        2. 데이터 처리
-        for (int i = 1; i <= b; i++) {
-//        3. 데이터 결과 저장
-            if(i%2==0){
-                sum+=i;
+
+        for (int i = a; i <= b; i++) {
+            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+            System.out.println("i = " + i);
+            if (i % 2 == 1) {
+                sum = sum + i;   //sum += i;
             }
         }
+        //문제 : for문을 이용하여 1-100까지의 합을 구하는 결과 출력
+        //4. 결과 출력
+        System.out.println("1-100 더한 결과 값 : " + sum);
+        //System.out.println("결과값 => " +  a + " + " + b + " = " + sum );
 
-//        4. 결과 출력
-        System.out.println("결과값 = "+ sum);
 
-        sc.close();
     }
 }
+

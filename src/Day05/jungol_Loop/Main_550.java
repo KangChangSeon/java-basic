@@ -23,7 +23,6 @@ public class Main_550 {
             }
             System.out.println();
         }
-        in.close();
 
     }
 }

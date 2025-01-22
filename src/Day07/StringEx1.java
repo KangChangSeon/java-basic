@@ -1,4 +1,4 @@
-package Day07;
+package day07;
 
 public class StringEx1 {
 
@@ -51,7 +51,7 @@ public class StringEx1 {
 //       }else{
 //           System.out.println("불포함");
 //       }
-        // 6. 문자열 분리 : 문자열이 구분자(delimiter : 공백)를 기준으로 잘라낼때 split()
+     // 6. 문자열 분리 : 문자열이 구분자(delimiter : 공백)를 기준으로 잘라낼때 split()
         String board = "1,제목,내용,작성자,파일";
         String[] tokens = board.split(",");
         System.out.println(tokens[0]);
@@ -66,6 +66,8 @@ public class StringEx1 {
             System.out.println(data);
         }
         System.out.println();
+
+
         System.out.println("=========================");
         for(int index = 0  ; index < tokens.length; index++){
             System.out.println(tokens[index]);

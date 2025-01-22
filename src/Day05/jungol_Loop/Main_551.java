@@ -19,7 +19,7 @@ public class Main_551 {
             }
             System.out.println();
         }
-        in.close();
+
 
 
     }

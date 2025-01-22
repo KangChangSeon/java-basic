@@ -1,9 +1,12 @@
-package Day03;
+package day03;
 
-public class CalculatorMain{
+public class CalculatorMain {
     public static void main(String[] args) {
 
-        Calculator call = new Calculator();
-        call.calculator();
+        Calculator  cal1 = new Calculator();
+        cal1.calculator();
+//        Calculator  cal2 = new Calculator();
+//        cal2.calculator();
+
     }
 }

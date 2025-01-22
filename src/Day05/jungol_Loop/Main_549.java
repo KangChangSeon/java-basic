@@ -18,6 +18,6 @@ public class Main_549 {
             if(total >= num) break;
         }
         System.out.printf("%d %d",count,total);
-        in.close();
+
     }
 }

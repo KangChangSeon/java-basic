@@ -40,6 +40,5 @@ public class Main {
         if (n1 > n2) {
             System.out.printf("입력받은 수 중 큰 수는 %d이고 작은 수는 %d입니다.", n1, n2);
         }
-        input.close();
     }
 }
