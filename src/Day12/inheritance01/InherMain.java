@@ -1,4 +1,4 @@
-package Day12.inheritance;
+package Day12.inheritance01;
 
 class GrandFather {
     void printGrandFather() {
@@ -16,6 +16,7 @@ class SubFather extends GrandFather {
 
 class SubSon extends SubFather {
     void printSon() {
+        houseAddress = "인천";
         System.out.println("나는 아들입니다.");
         System.out.println("나는 아버지로부터 상속받습니다.");
         System.out.println("나의 아버지는 프로그래머");
@@ -26,15 +27,13 @@ class SubSon extends SubFather {
 public class InherMain {
     public static void main(String[] args) {
         SubSon objSon = new SubSon();
-        objSon.houseAddress = "인천";
-        objSon.familyName = "?";
         objSon.printSon();
         objSon.printFather();
         objSon.printGrandFather();
     }
 }
 
-//
+
 //class Parent {
 //    int field1 = 20;
 //    void method1() {
@@ -52,9 +51,14 @@ public class InherMain {
 //public class InherMain{
 //    public static void main(String[] args) {
 //        Child objChild = new Child();
+//        Parent objParent = new Child();
+//
+//        objParent.method2();
+//
 //        objChild.method1();
 //        objChild.method2();
 //        System.out.println(objChild.field1);
 //        System.out.println(objChild.field2);
 //    }
 //}
+

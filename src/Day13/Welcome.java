@@ -1,3 +1,5 @@
+package Day13;
+
 import java.util.Scanner;
 
 public class Welcome {
