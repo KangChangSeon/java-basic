@@ -45,6 +45,86 @@ private 클래스() {} -> new 생성자 X
             return singleton;
         }
 }
+디자인 패턴 중에서 가장 개념이 간단한 패턴
+
+- 왜 싱글톤 패턴을 쓸까?
+ㄴ> 메모리 절약을 위해, 인스턴스가 필요할 때 똑같은 인스턴스를 새로 만들지 말고, 기존의인스턴스를 가져와서 활용하는 기법
+
+- 어떨때 적용하면 좋을까?
+ㄴ> 그 객체가 리소스를 많이 차지하는 역할, 무거운 클래스를 설계할 때 적용
+(데이터베이스 연결 모듈, 디스크 연결, 네트워크 통신, DBCP 컨네션 풀, 스레드 풀, 캐시, 로그 기록 객체 운영)
+
+싱글톤 패턴 구현 기법 종류
+어떤 목적을 구현하기 위한 코드 : 가장 최적화된 패턴을 상황에 맞게 사용하는 것이 핵심
+싱글톤 패턴을 구현할 때 대표적인 코드 기법 7가지
+1. Eager Initialization
+    한번만 미리 만들어두는, 가장 직관적이면서도 심플한 기법 (Keep)
+2. Static block Initialization
+    클래스가 로딩되고 클래스 변수가 준비된 후 자동으로 실행되는 블럭
+        static { // static 블럭을 이용해 예외 처리
+            try {
+                instance = new SingletonStatic();
+            } catch (Exception e) {
+                throw new RuntimeException("싱글톤 객체 생성 오류");
+            }
+        }
+        public static SingletonStatic getInstance() {
+            return instance;
+        }
+    }
+3. Lazy Initialization
+    객체 생성에 대한 관리를 내부적으로 처리, 메서드를 호출했을 때
+    인스턴스 변수의 null 유무에 따라 초기화 하거나 있는걸 반환하는 기법
+    Thread Safe 하지 않은 단점이 있다.
+        public static SingletonStatic getInstance() {
+            // 외부에서 정적메소드인 getInstance() 호출하면 이때 초기화를 진행 (Lazy)
+            if (instance == null) instance = new SingletonStatic();
+            return instance;
+        }
+4. Thread safe Initialization
+    여러 개의 스레드가 동시에 접근해도 안전하게 객체를 초기화하는 방법
+5. Double-Checked Locking (volatile)
+    멀티스레드 환경에서 Singleton 객체를 생성할 때, 성능을 최적화하면서도
+    동기화를 보장하기 위해 두 번 조건을 검사하는 방식
+6. Bill Pugh Solution (Lazy Holder)
+    멀티스레드 환경에서 안전하고 Lazy Loading (나중에 객체 생성)
+    클래스 안에 내부 클래스(holder)를 만들어서 JVM 클래스 로더 매커니즘과 클래스가 로드되는 시점에 이용하는 방법
+    public class SingletonHolder {
+        private SingletonHolder(){};
+        private static class SingletonInstanceHolder{
+            private static final SingletonHolder INSTANCE = new SingletonHolder();
+        }
+        public static SingletonHolder getInstance() {
+            return SingletonInstanceHolder.INSTANCE;
+        }
+    }
+7. Enum 이용
+    enum SingletonEnum {
+        INSTANCE;
+
+        private final Client dbClient;
+
+        SingletonEnum(){
+            dbClient = Database.getClient();
+        }
+
+        public static SingletonEnum getInstance(){
+            return INSTANCE;
+        }
+        public Client getClient(){
+            return dbClient;
+        }
+    }
+
+    public static void main(String[] args) {
+        SingletonEnum singletonEnum = SingletonEnum.getInstance();
+        SingletonEnum.getClient();
+    }
+
+싱글톤의 문제점
+1. 모듈간의 의존성이 높아진다.
+2. S.O.L.I.D 원칙 : 객체 지향 프로그래밍이 지향하는 원칙
+3. TDD (테스트 주도 개발)
 -------------------------------------------------------------------------------------------------------------
 Quiz 1. 클래스를 사용하는 시점에서 딱 한번 메모리에 로딩하기 위해서 사용하는 키워드는 무엇인가
 -> static
